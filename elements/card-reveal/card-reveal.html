@@ -8,90 +8,90 @@
 <link rel="import" href="../../bower_components/core-animated-pages/transitions/cross-fade.html">
 
 <polymer-element name="card-reveal" center layout>
-	<template>
-		<style>
-			paper-shadow,
-			core-animated-pages section {
-				height: 500px;
-				width: 500px;
-			}
-			core-animated-pages section {
-				overflow: hidden;
-			}
-			h3 {
-				font-weight: 300;
-				font-size: 26px;
-				margin: 0;
-				padding: 0;
-				padding-bottom: 10px;
-			}
-			.card-content,
-			.card-reveal {
-				padding: 20px;
-				background: white;
-				height: 500px;
-			}
-			a {
-				color: orange;
-				text-transform: uppercase;
-			}
-		</style>
-		<paper-shadow>
-			<core-animated-pages transitions="slide-up" selected="{{selected}}">
-				<section>
-					<div>
-						<img src="http://lorempixel.com/500/380/">
-						<div>
-							<div class="card-content">
-								<div layout horizontal>
-									<div flex>
-										<h3>{{item.title}}</h3>
-									</div>
-									<div>
-										<paper-icon-button on-tap="{{reveal}}" icon="more-vert"></paper-icon-button>
-									</div>
-								</div>
-								<a>This is a link</a>
-							</div>
-						</div>
-					</div>
-				</section>
-				<section>
-					<div class="card-reveal" slide-up cross-fade>
-						<div layout horizontal>
-							<div flex>
-								<h3>{{item.title}}</h3>
-							</div>
-							<div>
-								<paper-icon-button on-tap="{{reveal}}" icon="close"></paper-icon-button>
-							</div>
-						</div>
-						<div>
-							{{item.more}}
-						</div>
-					</div>
-				</section>
-			</core-animated-pages>
-		</paper-shadow>
-	</template>
-	
-	<script>
-		Polymer({
-			created: function () {
-				this.item = {
-					title: "Card Title",
-					more: "Here is some more information about this product that is only revealed once clicked on."
-				};
-			},
-			reveal: function () {
-				if (this.selected == 0) {
-					this.selected = 1;
-				} else {
-					this.selected = 0;
-				}
-			}
-		});
-	</script>
+    <template>
+        <style>
+            paper-shadow,
+            core-animated-pages section {
+                height: 500px;
+                width: 500px;
+            }
+            core-animated-pages section {
+                overflow: hidden;
+            }
+            h3 {
+                font-weight: 300;
+                font-size: 26px;
+                margin: 0;
+                padding: 0;
+                padding-bottom: 10px;
+            }
+            .card-content,
+            .card-reveal {
+                padding: 20px;
+                background: white;
+                height: 500px;
+            }
+            a {
+                color: orange;
+                text-transform: uppercase;
+            }
+        </style>
+        <paper-shadow>
+            <core-animated-pages transitions="slide-up" selected="{{selected}}">
+                <section>
+                    <div>
+                        <img src="http://lorempixel.com/500/380/">
+                        <div>
+                            <div class="card-content">
+                                <div layout horizontal>
+                                    <div flex>
+                                        <h3>{{item.title}}</h3>
+                                    </div>
+                                    <div>
+                                        <paper-icon-button on-tap="{{reveal}}" icon="more-vert"></paper-icon-button>
+                                    </div>
+                                </div>
+                                <a>This is a link</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="card-reveal" slide-up cross-fade>
+                        <div layout horizontal>
+                            <div flex>
+                                <h3>{{item.title}}</h3>
+                            </div>
+                            <div>
+                                <paper-icon-button on-tap="{{reveal}}" icon="close"></paper-icon-button>
+                            </div>
+                        </div>
+                        <div>
+                            {{item.more}}
+                        </div>
+                    </div>
+                </section>
+            </core-animated-pages>
+        </paper-shadow>
+    </template>
+
+    <script>
+        Polymer({
+            created: function () {
+                this.item = {
+                    title: "Card Title",
+                    more: "Here is some more information about this product that is only revealed once clicked on."
+                };
+            },
+            reveal: function () {
+                if (this.selected == 0) {
+                    this.selected = 1;
+                } else {
+                    this.selected = 0;
+                }
+            }
+        });
+    </script>
 
 </polymer-element>
 
